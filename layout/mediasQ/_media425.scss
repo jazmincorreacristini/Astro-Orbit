@@ -1,0 +1,51 @@
+// Estilos para (425px)
+@media (max-width: map-get($breakpoints, mobile)) {
+    body {
+        margin: 30px;
+        margin-left: 30px;
+    }
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-bar li a {
+        font-size: 13px;
+    }
+    
+    .logo-nav img {
+        display: flex;
+        width: auto;
+        height: 120px;
+    }
+    
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .logos-footer {
+        padding-left: 0;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .logos-footer img {
+        max-width: 50px;
+        height: auto;
+    }
+    
+    .p-footer {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    // mixin
+    .nav-bar {
+        @include box-shadow;
+    }
+    }

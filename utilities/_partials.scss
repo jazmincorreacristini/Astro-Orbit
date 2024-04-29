@@ -1,0 +1,226 @@
+@import 'mixins';
+@import 'variables';
+@import 'breakpoints';
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del body*/
+body {
+    background-image: url(../assets/img/background-image.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 5px solid $border-color;
+    border-radius: 2.5rem;
+    margin: 60px;
+}
+
+/* Estilos del header*/
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    position: sticky;
+    border-top-right-radius: 34px;
+    border-top-left-radius: 34px;
+    backdrop-filter: blur(10px);
+    top: 0;
+}
+
+/* Estilos de la nav-bar*/
+.nav-bar {
+    @extend .flex;
+    @extend .list-none;
+    gap: 30px;
+
+    li a {
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: $font-kode-mono;
+    font-size: 35px;
+    }
+}
+
+/* Estilos del logo-nav */
+.logo-nav {
+    @extend .flex;
+    width: auto;
+    height: 250px;
+}
+
+/* Estilos del footer*/
+footer {
+    @extend .flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid $border-color;
+    border-radius: 2.5rem;
+    border-top-width: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.8rem;
+    border-bottom-right-radius: 1.8rem;
+    height: 155px;
+}
+
+.p-footer {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: $font-kode-mono;
+}
+
+.logos-footer {
+    @extend .flex;
+    align-items: center;
+    padding-left: 40px;
+    gap: 40px;
+
+    img {
+    max-width: 70px;
+    height: auto;
+    }
+}
+
+/* Estilos de la sección 1 de home */
+.section1-home {
+    p {
+        @extend .flex;
+        justify-content: center;
+        color: white;
+        font-family: $font-kode-mono;
+        font-size: 30px;
+
+        > div > img {
+            width: 100%;
+            height: 500px;
+            opacity: 0.8;
+            margin-top: 100px;
+        }
+    }
+}
+
+/* Estilos de la sección 2 de home */
+.section2-home {
+    h1 {
+    @extend .flex;
+    justify-content: center;
+    margin-top: 90px;
+    color: white;
+    font-size: 70px;
+    text-transform: uppercase;
+    font-family: $font-orange-kid;
+    }
+
+    h2 {
+    @extend .flex;
+    justify-content: center;
+    margin-top: 120px;
+    color: white;
+    font-size: 50px;
+    font-family: $font-kode-mono;
+    font-weight: bolder;
+    -webkit-text-stroke: 1.5px $primary-color;
+    }
+}
+
+/* Estilos de img en home */
+.img-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    align-items: center;
+}
+
+.sun-home,
+.moon-home {
+    width: 18.75rem;
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-bottom: 100px;
+
+    img {
+    max-width: 100%;
+    height: 20rem;
+    border-radius: 10px;
+    @include box-shadow;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.7;
+    filter: saturate(130%);
+    }
+}
+
+/* Estilos de gallery */
+.h1-gallery {
+    @extend .flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    h1 {
+    color: white;
+    font-size: 40px;
+    font-family: $font-kode-mono;
+    font-weight: lighter;
+    text-align: center;
+    border: 3px solid $primary-color;
+    padding: 8px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.13);
+    }
+}
+
+.section1-gallery {
+    h2 {
+    @extend .flex;
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 2rem;
+    margin-left: -80px;
+    font-size: 33px;
+    color: white;
+    text-decoration: underline solid 4px $primary-color;
+    font-family: $font-orange-kid;
+    font-weight: lighter;
+    }
+}
+
+.section2-gallery {
+    position: relative;
+    height: auto;
+}
+
+.earth-gallery img {
+    width: 100%;
+    max-width: 930px;
+    height: auto;
+    top: 80px;
+    opacity: 80%;
+    filter: saturate(250%);
+    margin-bottom: -5px;
+}
+
+.planet-gallery img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: -162px;
+    margin: auto;
+    position: absolute;
+    z-index: 10;
+    height: calc(100% - 160px);
+    opacity: 60%;
+    filter: saturate(120%);
+}
